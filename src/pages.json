@@ -1,0 +1,69 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/im/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		},
+		{
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/destination_n.png",
+				"selectedIconPath": "static/destination_selected_n.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/order/index",
+				"iconPath": "static/order_n.png",
+				"selectedIconPath": "static/order_selected_n.png",
+				"text": "订单"
+			},
+			{
+				"pagePath": "pages/im/index",
+				"iconPath": "static/serve_n.png",
+				"selectedIconPath": "static/serve_selected_n.png",
+				"text": "客服"
+			},
+			{
+				"pagePath": "pages/my/index",
+				"iconPath": "static/my_n.png",
+				"selectedIconPath": "static/my_selected_n.png",
+				"text": "我的"
+			}
+		]
+	}
+}

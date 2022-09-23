@@ -1,0 +1,116 @@
+{
+  "name": "cdzs-uni-app",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev:h5:dev": "cross-env NODE_ENV=development APP_ENV=dev UNI_PLATFORM=h5 vue-cli-service uni-serve --mode dev",
+    "dev:h5:prod": "cross-env NODE_ENV=development APP_ENV=prod UNI_PLATFORM=h5 vue-cli-service uni-serve --mode dev",
+    "dev:mp-weixin:dev": "cross-env NODE_ENV=development APP_ENV=dev UNI_PLATFORM=mp-weixin vue-cli-service uni-build  --mode dev --watch",
+    "dev:mp-weixin:prod": "cross-env NODE_ENV=development APP_ENV=prod UNI_PLATFORM=mp-weixin vue-cli-service uni-build --mode dev --watch",
+    "build:h5": "cross-env NODE_ENV=production APP_ENV=prod UNI_PLATFORM=h5 vue-cli-service uni-build  --mode prod",
+    "build:mp-weixin": "cross-env NODE_ENV=production APP_ENV=prod UNI_PLATFORM=mp-weixin vue-cli-service uni-build  --mode prod",
+    "deploy": "node scripts/ci",
+    "lint": "eslint --ext .js,.jsx,.vue src",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.vue src",
+    "ls-lint": "ls-lint",
+    "cz": "git add . && git cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "eslint --ext .js,.jsx,.vue src",
+      "prettier --write ./src"
+    ]
+  },
+  "dependencies": {
+    "@dcloudio/uni-app-plus": "^2.0.1-33520211229002",
+    "@dcloudio/uni-h5": "^2.0.1-33520211229002",
+    "@dcloudio/uni-helper-json": "*",
+    "@dcloudio/uni-i18n": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-360": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-alipay": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-baidu": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-kuaishou": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-qq": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-toutiao": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-vue": "^2.0.1-33520211229002",
+    "@dcloudio/uni-mp-weixin": "^2.0.1-33520211229002",
+    "@dcloudio/uni-quickapp-native": "^2.0.1-33520211229002",
+    "@dcloudio/uni-quickapp-webview": "^2.0.1-33520211229002",
+    "@dcloudio/uni-stat": "^2.0.1-33520211229002",
+    "@vue/babel-preset-app": "^4.5.15",
+    "@vue/shared": "^3.0.0",
+    "core-js": "^3.6.5",
+    "flyio": "^0.6.2",
+    "luch-request": "^3.0.7",
+    "miniprogram-ci": "^1.6.1",
+    "qs": "^6.10.3",
+    "qweather-icons": "^1.1.0",
+    "regenerator-runtime": "^0.12.1",
+    "uview-ui": "^1.8.4",
+    "vue": "^2.6.11",
+    "vuex": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "~7.12.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
+    "@dcloudio/types": "*",
+    "@dcloudio/uni-automator": "^2.0.1-33520211229002",
+    "@dcloudio/uni-cli-i18n": "^2.0.1-33520211229002",
+    "@dcloudio/uni-cli-shared": "^2.0.0",
+    "@dcloudio/uni-migration": "^2.0.0",
+    "@dcloudio/uni-template-compiler": "^2.0.0",
+    "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0",
+    "@dcloudio/vue-cli-plugin-uni": "^2.0.0",
+    "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0",
+    "@dcloudio/webpack-uni-mp-loader": "^2.0.0",
+    "@dcloudio/webpack-uni-pages-loader": "^2.0.0",
+    "@ls-lint/ls-lint": "^1.10.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.3",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "husky": "4.3.8",
+    "jest": "^25.4.0",
+    "lint-staged": "^11.2.6",
+    "mini-types": "*",
+    "miniprogram-api-typings": "*",
+    "node-sass": "npm:dart-sass",
+    "postcss-comment": "^2.0.0",
+    "prettier": "^2.4.1",
+    "sass-loader": "10.2.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "Android >= 4.4",
+    "ios >= 9"
+  ],
+  "uni-app": {
+    "scripts": {}
+  }
+}
